@@ -1,54 +1,38 @@
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+const currentUrl = window.location.href;
 
-    if (message.action === "phishingWarning") {
+// ---------- AUTOMATIC SCAN ----------
+function autoScan() {
 
-        let warning = document.createElement("div");
+    fetch("https://jarvisc-phishing-backend.onrender.com/scan", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            url: currentUrl
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
 
-        warning.innerHTML = `
-        <div style="
-        position:fixed;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background:#8B0000;
-        color:white;
-        z-index:999999;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        align-items:center;
-        font-family:Arial;
-        text-align:center;
-        ">
+        console.log("Auto Scan Result:", data);
 
-        <h1 style="font-size:45px;">⚠ SECURITY WARNING</h1>
+        if(data.final_result === "PHISHING WEBSITE"){
 
-        <h2>Phishing Website Detected</h2>
+            alert(
+                "⚠ PHISHING WEBSITE DETECTED!\n\n" +
+                "Risk Score: " + data.risk_score +
+                "\nProbability: " + data.probability + "%"
+            );
 
-        <p style="font-size:20px;">
-        Risk Score: ${message.result.risk_score}
-        </p>
+        }
 
-        <p style="max-width:600px;">
-        This website has been identified as a potential phishing site.
-        Entering passwords or personal information may compromise your security.
-        </p>
+    })
+    .catch(error => {
+        console.error("Scan Error:", error);
+    });
 
-        <button onclick="window.history.back()" style="
-        padding:12px 20px;
-        font-size:18px;
-        margin-top:20px;
-        cursor:pointer;
-        ">
-        Go Back To Safety
-        </button>
+}
 
-        </div>
-        `;
-
-        document.body.appendChild(warning);
-
-    }
-
-});
+// Run automatically when page loads
+window.addEventListener("load", autoScan);
