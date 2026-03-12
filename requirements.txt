@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 flask
 flask-cors
 pandas
@@ -6,3 +7,14 @@ scikit-learn
 joblib
 requests
 tldextract
+=======
+flask
+flask-cors
+pandas
+numpy
+scikit-learn
+joblib
+requests
+tldextract
+python-whois
+>>>>>>> 715d697c649e7bf29f513d64935b5f9d116cfda5
