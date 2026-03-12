@@ -1,0 +1,8 @@
+SAFE (confidence 1.0000) : https://www.google.com
+SAFE (confidence 1.0000) : https://github.com
+PHISHING (confidence 0.9600) : http://secure-login-paypal.com
+PHISHING (confidence 0.9600) : http://banking-verification123.net
+SAFE (confidence 0.9800) : https://www.wikipedia.org
+SAFE (confidence 1.0000) : https://www.apple.com
+PHISHING (confidence 0.9600) : http://microsoftsupport-login-help.org
+PHISHING (confidence 0.9600) : http://appleid-verification-update.info

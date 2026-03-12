@@ -1,0 +1,23 @@
+Timestamp,URL,Result,Phishing %,Safe %
+2026-02-15 21:26:22,http://appleid-verification-update.info, PHISHING WEBSITE,93.00,7.00
+2026-02-15 21:26:46,https://www.microsoft.com, LEGITIMATE WEBSITE,0.00,100.00
+2026-02-15 21:28:52,https://www.microsoft.com, LEGITIMATE WEBSITE,0.00,100.00
+2026-02-15 22:03:07,http://appleid-verification-update.info,⚠ PHISHING WEBSITE,93.00,7.00
+2026-02-19 09:25:11,http://microsoftsupport-login-help.org,⚠ PHISHING WEBSITE,93.00,7.00
+2026-02-19 09:25:37,https://www.github.com,LEGITIMATE WEBSITE,34.00,66.00
+2026-02-19 09:25:53,https://www.google.com,LEGITIMATE WEBSITE,34.00,66.00
+2026-02-19 09:26:05,https://www.microsoft.com,LEGITIMATE WEBSITE,34.00,66.00
+2026-02-19 09:26:12,http://www.microsoft.com,LEGITIMATE WEBSITE,42.00,58.00
+2026-02-19 09:26:21,https://www.microsoft.com,LEGITIMATE WEBSITE,34.00,66.00
+2026-02-20 21:04:30,http://appleid-verification-update.info,⚠ PHISHING WEBSITE,93.00,7.00
+2026-02-20 21:04:47,https://www.apple.com,✔ LEGITIMATE WEBSITE,0.00,100.00
+2026-02-20 21:05:26,https://www.apple.com,✔ LEGITIMATE WEBSITE,0.00,100.00
+2026-02-20 21:05:43,http://appleid-verification-update.info,⚠ PHISHING WEBSITE,93.00,7.00
+2026-02-20 21:11:46,http://appleid-verification-update.info,⚠ PHISHING WEBSITE DETECTED,93.00,7.00
+2026-02-20 21:12:00,https://www.google.com,✔ LEGITIMATE WEBSITE,0.00,100.00
+2026-02-20 21:16:27,http://appleid-verification-update.info,>>> THREAT DETECTED <<<,93.00,7.00
+2026-02-20 21:16:40,python src/gui_app.py,>>> THREAT DETECTED <<<,66.00,34.00
+2026-02-20 21:16:53,https://www.apple.com,>>> WEBSITE VERIFIED <<<,0.00,100.00
+2026-02-20 21:17:15,http://bankofamerica.verify-account.co,>>> THREAT DETECTED <<<,62.00,38.00
+2026-02-20 21:23:26,http://appleid-verification-update.info,⚠ PHISHING WEBSITE DETECTED,93.00,7.00
+2026-02-20 21:23:41,https://www.apple.com,✔ WEBSITE VERIFIED AS SAFE,0.00,100.00

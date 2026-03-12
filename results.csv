@@ -1,0 +1,9 @@
+url,prediction,confidence
+https://www.google.com,SAFE,1.0000
+https://github.com,SAFE,1.0000
+http://secure-login-paypal.com,PHISHING,0.9600
+http://banking-verification123.net,PHISHING,0.9600
+https://www.wikipedia.org,SAFE,0.9800
+https://www.apple.com,SAFE,1.0000
+http://microsoftsupport-login-help.org,PHISHING,0.9600
+http://appleid-verification-update.info,PHISHING,0.9600
