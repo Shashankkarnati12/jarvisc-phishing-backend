@@ -6,4 +6,4 @@ scikit-learn
 joblib
 requests
 tldextract
-pyhton-whois
+python-whois
