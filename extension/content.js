@@ -31,3 +31,14 @@ window.location.href = chrome.runtime.getURL("block.html");
 }
 
 autoScan();
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+
+    if (message.action === "phishingWarning") {
+
+        console.log("Phishing detected:", message.result);
+
+        window.location.href = chrome.runtime.getURL("block.html");
+
+    }
+
+});
