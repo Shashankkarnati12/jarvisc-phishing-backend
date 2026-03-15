@@ -21,7 +21,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         box-shadow:0 0 10px rgba(0,0,0,0.3);
         ">
 
-        <b>✅ SAFE WEBSITE</b><br><br>
+        <b>&#9989; SAFE WEBSITE</b>
 
         Risk Score: ${data.risk_score}<br>
         ML Probability: ${data.probability}<br>
