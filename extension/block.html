@@ -1,41 +1,89 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <title>Phishing Blocked</title>
+
 <style>
+
 body{
-font-family: Arial;
-text-align:center;
-background:#111;
-color:white;
-padding-top:100px;
+    font-family: Arial;
+    background:#1c1c1c;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
 .box{
-background:#e53935;
-padding:40px;
-border-radius:10px;
-width:400px;
-margin:auto;
+    background:#e74c3c;
+    color:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    width:360px;
+}
+
+.details{
+    margin-top:20px;
+    text-align:left;
+    background:white;
+    color:black;
+    padding:12px;
+    border-radius:6px;
+    font-size:14px;
 }
 
 button{
-padding:10px 20px;
-font-size:16px;
-margin-top:20px;
+    margin-top:15px;
+    padding:8px 15px;
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
 }
+
 </style>
+
 </head>
 
 <body>
 
 <div class="box">
-<h1>⚠ Phishing Website Blocked</h1>
+
+<h2>🚫 Phishing Website Blocked</h2>
+
 <p>This website was detected as a phishing page.</p>
 <p>Your security system prevented access.</p>
 
-<button onclick="history.back()">Go Back</button>
+<div class="details">
+
+<p><b>Risk Score:</b> <span id="risk"></span></p>
+<p><b>ML Probability:</b> <span id="ml"></span></p>
+<p><b>SSL Status:</b> <span id="ssl"></span></p>
+<p><b>Domain Age:</b> <span id="age"></span> days</p>
+<p><b>VT Malicious:</b> <span id="vtm"></span></p>
+<p><b>VT Suspicious:</b> <span id="vts"></span></p>
+
 </div>
 
+<button onclick="history.back()">Go Back</button>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("risk").innerText = params.get("risk");
+document.getElementById("ml").innerText = params.get("ml");
+document.getElementById("ssl").innerText = params.get("ssl");
+document.getElementById("age").innerText = params.get("age");
+document.getElementById("vtm").innerText = params.get("vtm");
+document.getElementById("vts").innerText = params.get("vts");
+
+</script>
+
 </body>
+
 </html>
