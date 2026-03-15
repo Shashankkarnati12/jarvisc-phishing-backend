@@ -1,43 +1,29 @@
-const currentUrl = window.location.href;
-
-function autoScan() {
-
-fetch("http://127.0.0.1:10000/predict", {
-method: "POST",
-headers: {
-"Content-Type": "application/json"
-},
-body: JSON.stringify({
-url: currentUrl
-})
-})
-
-.then(response => response.json())
-
-.then(data => {
-
-console.log("Auto Scan Result:", data);
-
-if(data.final_result === "PHISHING"){
-
-window.location.href = chrome.runtime.getURL("block.html");
-
-}
-
-})
-
-.catch(error => console.log(error));
-
-}
-
-autoScan();
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
-    if (message.action === "phishingWarning") {
+    if (message.action === "showSafe") {
 
-        console.log("Phishing detected:", message.result);
+        const box = document.createElement("div");
 
-        window.location.href = chrome.runtime.getURL("block.html");
+        box.innerHTML = `
+        <div style="
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        background:#2ecc71;
+        color:white;
+        padding:12px;
+        border-radius:8px;
+        font-size:14px;
+        z-index:999999;">
+        ✅ SAFE WEBSITE
+        </div>
+        `;
+
+        document.body.appendChild(box);
+
+        setTimeout(()=>{
+            box.remove();
+        },4000);
 
     }
 

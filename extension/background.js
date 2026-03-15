@@ -7,24 +7,32 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ url: tab.url })
+            body: JSON.stringify({
+                url: tab.url
+            })
         })
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
 
-            console.log("Auto Scan Result:", data);
+            console.log("Scan Result:", data);
 
             if (data.final_result === "PHISHING WEBSITE") {
 
+                chrome.tabs.update(tabId, {
+                    url: chrome.runtime.getURL("block.html")
+                });
+
+            } else {
+
                 chrome.tabs.sendMessage(tabId, {
-                    action: "phishingWarning",
+                    action: "showSafe",
                     result: data
                 });
 
             }
 
         })
-        .catch(err => console.log("Auto Scan Error:", err));
+        .catch(err => console.log("Scan Error:", err));
 
     }
 
