@@ -27,8 +27,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         ML Probability: ${data.probability}<br>
         SSL Status: ${data.ssl_status}<br>
         Domain Age: ${data.domain_age_days} days<br>
-        VT Malicious: ${data.vt_malicious}<br>
-        VT Suspicious: ${data.vt_suspicious}
 
         </div>
         `;
