@@ -32,15 +32,6 @@ body{
     color:black;
     padding:12px;
     border-radius:6px;
-    font-size:14px;
-}
-
-button{
-    margin-top:15px;
-    padding:8px 15px;
-    border:none;
-    border-radius:4px;
-    cursor:pointer;
 }
 
 </style>
@@ -71,18 +62,7 @@ button{
 
 </div>
 
-<script>
-
-const params = new URLSearchParams(window.location.search);
-
-document.getElementById("risk").innerText = params.get("risk");
-document.getElementById("ml").innerText = params.get("ml");
-document.getElementById("ssl").innerText = params.get("ssl");
-document.getElementById("age").innerText = params.get("age");
-document.getElementById("vtm").innerText = params.get("vtm");
-document.getElementById("vts").innerText = params.get("vts");
-
-</script>
+<script src="block.js"></script>
 
 </body>
 
