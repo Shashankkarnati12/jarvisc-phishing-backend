@@ -14,6 +14,14 @@ CORS(app)
 
 model = joblib.load("models/phishing_model.pkl")
 
+@app.route("/")
+def home():
+    return jsonify({
+        "message": "JARVIS-C Phishing Detection API",
+        "status": "running",
+        "endpoint": "/scan",
+        "method": "POST"
+    })
 
 @app.route("/scan", methods=["POST"])
 def scan():
