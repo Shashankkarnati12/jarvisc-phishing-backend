@@ -1,42 +1,29 @@
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((message) => {
 
-    if (message.action === "showSafe") {
+    if (message.action !== "showSafe") return;
 
-        const data = message.result;
+    const data = message.result;
 
-        const box = document.createElement("div");
+    const box = document.createElement("div");
 
-      box.innerHTML = `
-<div style="
-position:fixed;
-bottom:20px;
-right:20px;
-background:#2ecc71;
-color:white;
-padding:14px;
-border-radius:8px;
-font-size:13px;
-z-index:999999;
-width:220px;
-box-shadow:0 0 10px rgba(0,0,0,0.3);
-">
+    box.innerHTML = `
+    <div style="
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        background:#2ecc71;
+        color:white;
+        padding:14px;
+        border-radius:8px;
+        z-index:999999;
+    ">
+    ✅ SAFE WEBSITE <br><br>
+    Risk Score: ${data.risk_score} <br>
+    ML Probability: ${data.probability} <br>
+    SSL Status: ${data.ssl_status} <br>
+    Domain Age: ${data.domain_age_days} days
+    </div>
+    `;
 
-<b>✅ SAFE WEBSITE</b><br><br>
-
-Risk Score: ${data.risk_score}<br>
-ML Probability: ${data.probability}<br>
-SSL Status: ${data.ssl_status}<br>
-Domain Age: ${data.domain_age_days} days
-
-</div>
-`;
-
-        document.body.appendChild(box);
-
-        setTimeout(()=>{
-            box.remove();
-        },6000);
-
-    }
-
+    document.body.appendChild(box);
 });

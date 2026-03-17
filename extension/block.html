@@ -1,66 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Phishing Blocked</title>
-
+<title>Blocked</title>
 <style>
-
-body{
-    font-family: Arial;
-    background:#1c1c1c;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
+body {
+    background: #e74c3c;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
 }
-
-.box{
-    background:#e74c3c;
-    color:white;
-    padding:30px;
-    border-radius:10px;
-    text-align:center;
-    width:360px;
+.box {
+    background: white;
+    color: black;
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
 }
-
-.details{
-    margin-top:20px;
-    text-align:left;
-    background:white;
-    color:black;
-    padding:12px;
-    border-radius:6px;
-}
-
 </style>
-
 </head>
-
 <body>
 
-<div class="box">
+<h1>⚠️ Phishing Website Blocked</h1>
 
-<h2>&#128683; Phishing Website Blocked</h2>
+<div class="box" id="info"></div>
 
-<p>This website was detected as a phishing page.</p>
-<p>Your security system prevented access.</p>
+<script>
+const params = new URLSearchParams(window.location.search);
 
-<div class="details">
-
-<p><b>Risk Score:</b> <span id="risk"></span></p>
-<p><b>ML Probability:</b> <span id="ml"></span></p>
-<p><b>SSL Status:</b> <span id="ssl"></span></p>
-<p><b>Domain Age:</b> <span id="age"></span> days</p>
-
-</div>
-
-<button id="backBtn">Go Back</button>
-
-</div>
-
-<script src="block.js"></script>
+document.getElementById("info").innerHTML = `
+Risk Score: ${params.get("risk")} <br>
+ML Probability: ${params.get("ml")} <br>
+SSL Status: ${params.get("ssl")} <br>
+Domain Age: ${params.get("age")} days
+`;
+</script>
 
 </body>
-
 </html>
